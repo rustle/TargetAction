@@ -1,14 +1,19 @@
 //
 //  TargetAction.swift
 //
-//  Copyright © 2022 Doug Russell. All rights reserved.
+//  Copyright © 2022-2023 Doug Russell. All rights reserved.
 //
 
 public struct TargetAction {
 
     // MARK: - Sync
 
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject>(
         _ target: Target,
@@ -19,7 +24,12 @@ public struct TargetAction {
             return action(target)()
         }
     }
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject, Input>(
         _ target: Target,
@@ -30,7 +40,12 @@ public struct TargetAction {
             return action(target)(input)
         }
     }
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject, Input1, Input2>(
         _ target: Target,
@@ -44,7 +59,12 @@ public struct TargetAction {
 
     // MARK: - Sync Throwing
 
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject>(
         _ target: Target,
@@ -55,7 +75,12 @@ public struct TargetAction {
             return try action(target)()
         }
     }
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject, Input>(
         _ target: Target,
@@ -66,7 +91,12 @@ public struct TargetAction {
             return try action(target)(input)
         }
     }
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject, Input1, Input2>(
         _ target: Target,
@@ -80,7 +110,12 @@ public struct TargetAction {
 
     // MARK: - Async
 
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject>(
         _ target: Target,
@@ -91,7 +126,12 @@ public struct TargetAction {
             return await action(target)()
         }
     }
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject, Input>(
         _ target: Target,
@@ -102,7 +142,12 @@ public struct TargetAction {
             return await action(target)(input)
         }
     }
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject, Input1, Input2>(
         _ target: Target,
@@ -116,7 +161,12 @@ public struct TargetAction {
 
     // MARK: - Async Throwing
 
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject>(
         _ target: Target,
@@ -127,7 +177,12 @@ public struct TargetAction {
             return try await action(target)()
         }
     }
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject, Input>(
         _ target: Target,
@@ -138,7 +193,12 @@ public struct TargetAction {
             return try await action(target)(input)
         }
     }
-    /// Helper function to make a closure from a method on a reference type instance without retaining the instance
+    /// Make a closure from an instance method on a reference type without introducing a retain cycle.
+    ///
+    /// - Parameters:
+    ///   - target: Instance to be passed to action to resolve the instance method to be invokd. Held weakly.
+    ///   - action: Usually an instance method taken as a static function that takes the instance as an argument and returns the instance method.
+    /// - Returns: closure matching instance method signature with target curried weakly
     @inlinable
     public static func target<Target: AnyObject, Input1, Input2>(
         _ target: Target,
