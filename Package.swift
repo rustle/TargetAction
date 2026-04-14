@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.2
 
 import PackageDescription
 
@@ -18,12 +18,12 @@ let package = Package(
     targets: [
         .target(
             name: "TargetAction",
-            dependencies: []/*,
-            swiftSettings: [
-                .enableExperimentalFeature("StrictConcurrency")
-            ]*/),
+            dependencies: []
+        ),
         .testTarget(
             name: "TargetActionTests",
-            dependencies: ["TargetAction"]),
-    ]
+            dependencies: ["TargetAction"]
+        ),
+    ],
+    swiftLanguageModes: [.v6]
 )
